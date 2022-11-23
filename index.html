@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content=`width=device-width, initial-scale=1.0` />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&family=Source+Sans+Pro:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>My Weather APP</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <div class="container main-container">
+      <div class="row">
+        <div class="col-6 left-side-container">
+          <form class="row g-3 city-form" id="searching-form">
+            <div class="col-auto">
+              <input
+                type="text"
+                class="form-control-sm"
+                id="city-input"
+                placeholder="Enter your city"
+              />
+            </div>
+            <div class="col-auto">
+              <button
+                type="submit"
+                class="btn btn-primary mb-3 btn-sm change-city-button"
+              >
+                Change city
+              </button>
+            </div>
+            <div class="col-auto">
+              <button
+                type="submit"
+                class="btn btn-secondary mb-3 btn-sm geo-location-button"
+              >
+                📍Current
+              </button>
+            </div>
+          </form>
+          <div class="row current-weather-container">
+            <div class="col-auto">
+              <div class="weather-emogi-container">
+                <img src="#" alt="weather emoji" id="icon" class="weather-emoji">
+              </div>
+              <div class="weather-details">
+                <ul class="weather-list list">
+                  <li class="weather-item">
+                    💧<br />Humidity <br />
+                    <span class="weather-item-accent" id="humidity-info"></span> %
+                  </li>
+                  <li class="weather-item">
+                    💨<br />Wind speed <br />
+                    <span class="weather-item-accent" id="wind-speed-info"></span
+                    > km/h
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-auto current-weather">
+              <h1 class="current-city" id="display-city"></h1>
+              <div class="current-temperature">
+                <span id="current-temperature"></span>
+                <span class="tempterute-unit units">
+                  <a
+                    href="#"
+                    class="tempterature-unit link active"
+                    id="celsius-link"
+                    >°C</a>
+                    |
+                  <a
+                    href="#"
+                    class=" tempterature-unit link"
+                    id="fahrenheit-link"
+                    >°F</a
+                  >
+                </span>
+              </div>
+              <p class="feels-temperature">
+                feels like 
+                <span
+                  class="feels-temperature-accent"
+                  id="feels-temperature"
+                ></span
+                >
+              </p>
+              <hr />
+              <p class="weather-descript" id="weather-description"></p>
+            </div>
+
+          </div>
+        </div>
+          <div class=" col-6 future-weather-container">
+            <div>
+              <ul class="current-time-list list">
+                <li class="current-time-item">today</li>
+                <li class="current-time-item" id="current-day">Tuesday</li>
+                <li class="current-time-item" id="current-time">10:24</li>
+              </ul>
+            </div>
+            <!-- <h3 class="next-days-title">Next days</h3> -->
+            <div class="weather-forecast" id="weather-forecast">
+              
+            </div>
+          </div>
+      </div>
+    </div>
+    <footer>
+        <ul class="list footer-list">
+             <li class="footer-item">
+                <p>Made by: Olka Khmelova</p>
+            </li>
+          <li class="footer-item">Mail me:
+            <a href="mailto:khmeleva_olga@ukr.net" class="footer-link link"
+              >khmeleva_olga@ukr.net</a
+            >
+          </li>
+          <li class="footer-item">
+            <a href="https://github.com/Olka-Khmelova/vanilla-weather-app.git" target ="_blank" class="footer-link link">My GitHub repository</a>
+        </li>
+        <!-- <li class="footer-item">
+          <a href="https://effervescent-peony-a26e3e.netlify.app/" target ="_blank" class="footer-link link">Published on Netlify</a>
+        </li> -->
+        </ul>
+    </footer>
+    <script src="/script/script.js"></script>
+  </body>
+</html>
