@@ -29,6 +29,18 @@ let currentTime = document.querySelector("#current-time");
 currentTime.innerHTML = `${hour}:${minutes}`;
 
 //////////////////////     Search form      /////////////////////
+function formatDayForecast(timestamp){
+  let date = new Date(timestamp*1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+function getForecast(coords){
+  let apiKey = "fe1483f743b581b5520a1b725af03a49";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=${units}`
+axios.get(apiUrl).then(showForecast);
+}
 function showWeather(response) {
   celsiusTemperature = response.data.main.temp;
   feelsTemperature = response.data.main.feels_like;
@@ -56,6 +68,8 @@ function showWeather(response) {
 
   let descriptionElement = document.querySelector("#weather-description");
   descriptionElement.innerHTML = response.data.weather[0].description;
+
+  getForecast(response.data.coord);
 }
 
 function getPosition(position) {
@@ -127,23 +141,25 @@ fahrenheitLink.addEventListener("click", showFahrenh);
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", showCelsius);
 
-search("Kyiv");
 
-function showForecast(){
+
+function showForecast(response){
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#weather-forecast");
   let forecastHTML = ` <div class="row row-forecast">`;
   let days = ["Thu", "Fri", "Sat", "Sun", "Mon"];
-  days.forEach(function(day) {
-    forecastHTML =  forecastHTML + `
-    <div class="col-2">
-    <span class="weather-forecst-day">${day}</span> 
-    <img src="http://openweathermap.org/img/wn/04d@2x.png" alt="forecast img" width="50">
-    <span class="maximum-temp forecast-temper">14°</span>
-    <span class="min-temp forecast-temper">6°</span>
+  forecast.forEach(function(forecastDay, idx) {
+    if (idx<5){
+    forecastHTML += `
+    <div class="col">
+    <span class="weather-forecst-day">${formatDayForecast(forecastDay.dt)}</span> 
+    <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="forecast img" width="50">
+    <span class="maximum-temp forecast-temper">${Math.round(forecastDay.temp.max)}°</span>
+    <span class="min-temp forecast-temper">${Math.round(forecastDay.temp.min)}°</span>
     </div>`
-
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-showForecast();
+search("Kyiv");
