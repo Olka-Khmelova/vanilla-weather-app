@@ -5,7 +5,7 @@
   .main-container {
     font-family: "Roboto", sans-serif;
     color: #70757a;;
-    max-width: 950px;
+    max-width: 900px;
     min-width: 500px;
     margin: 0 auto;
     padding: 12px;
@@ -132,6 +132,7 @@
   .weather-forecast{
     padding: 30px 0px 0px;
     text-align: center;
+   width: 350px;
   }
 
   footer{
