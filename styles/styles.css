@@ -45,7 +45,8 @@
   }
   .btn-secondary{
     background-color: hsl(0, 0%, 90%);
-    color: #84CDF7;}
+    color: #84CDF7;
+  border: none;}
   .units {
     position: relative;
     top: -6px;
