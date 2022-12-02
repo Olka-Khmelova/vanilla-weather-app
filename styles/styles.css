@@ -43,11 +43,17 @@
     display: inline-block;
     margin: 25px;
   }
-
+  .btn-secondary{
+    background-color: hsl(0, 0%, 90%);
+    color: #84CDF7;}
   .units {
     position: relative;
     top: -6px;
     font-size: 18px;
+  }
+  .btn-secondary:hover{
+    background-color: #84CDF7;
+    color: hsl(0, 0%, 90%);
   }
 
   .current-weather {
