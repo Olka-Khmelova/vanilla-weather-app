@@ -26,7 +26,7 @@
     font-family: "Source Sans Pro", sans-serif;
     color: #212529;
     font-weight: 700;
-    font-size: 32px;
+    font-size: 29px;
   }
   .current-temperature {
     color: #212529;
@@ -34,10 +34,16 @@
     font-weight: 700;
 
   }
+  .current-time-list{
+    text-align: left;
+    padding-left: 0px;
+      }
+
   .current-time-item {
     display: inline-block;
-    margin: 30px 25px 0px;
+    margin: 25px;
   }
+
   .units {
     position: relative;
     top: -6px;
@@ -72,7 +78,8 @@
     padding: 20px 0px 0px 35px;
   }
   .weather-emoji{
-    width: 150px;
+    width: 130px;
+    padding-top: 20px;
   }
 
   .weather-descript {
@@ -107,9 +114,9 @@
     opacity: 0.9;
   }
   .weather-forecast{
-    padding: 60px 0px 0px;
+    padding: 25px 0px 0px;
     text-align: center;
-   width: 370px;
+    width: 370px;
   }
 
   footer{
@@ -122,5 +129,10 @@
   }
   .footer-link:hover{
     text-decoration: underline;
+  }
+  @media (max-width: 875px){
+  .btn-secondary{
+    display: none;
+  }
   }
   
