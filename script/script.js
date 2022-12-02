@@ -52,7 +52,7 @@ function showWeather(response) {
   displayTemperature.innerHTML = Math.round(celsiusTemperature);
 
   let displayFeelsTemperature = document.querySelector("#feels-temperature");
-  displayFeelsTemperature.innerHTML = `${Math.round(feelsTemperature)} °C`;
+  displayFeelsTemperature.innerHTML = `${Math.round(feelsTemperature)}`;
 
   let weatherDescr = document.querySelector("#weather-description");
   weatherDescr.innerHTML = response.data.weather[0].main;
@@ -100,48 +100,9 @@ function searchingSubmit(event) {
   let city = document.querySelector("#city-input").value;
   search(city);
 }
-function showFahrenh (event){
-  event.preventDefault();
-  let displayTemperature = document.querySelector("#current-temperature");
-  let displayFeelsTemperature = document.querySelector("#feels-temperature");
-  fahrenheitLink.classList.add("active");
-  celsiusLink.classList.remove("active");
-
-
-  let fahrenhTemperature = (celsiusTemperature*9)/5 + 32;
-  let fahrenhFeels = (feelsTemperature*9)/5 + 32;
-
-  displayTemperature.innerHTML = Math.round(fahrenhTemperature);
-  displayFeelsTemperature.innerHTML = `${Math.round(fahrenhFeels)} F`;
-}
-
-function showCelsius (event){
-  event.preventDefault();
-  let displayTemperature = document.querySelector("#current-temperature");
-  displayTemperature.innerHTML = Math.round(celsiusTemperature);
-
-  
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
- 
-  let displayFeelsTemperature = document.querySelector("#feels-temperature");
-  displayFeelsTemperature.innerHTML = `${Math.round(feelsTemperature)} °C`;
-}
-
-let celsiusTemperature = null;
-let feelsTemperature = null;
 
 let serchingForm = document.querySelector("#searching-form");
 serchingForm.addEventListener("submit", searchingSubmit);
-
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", showFahrenh);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", showCelsius);
-
-
 
 function showForecast(response){
   let forecast = response.data.daily;
