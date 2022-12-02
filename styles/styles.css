@@ -1,9 +1,8 @@
 
-  hr{
-    margin: 0px
-  }
   .main-container {
     font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    text-align: center;
     color: #70757a;;
     max-width: 900px;
     min-width: 500px;
@@ -12,15 +11,6 @@
     border-radius: 10px;
     border: 1px solid #ced4da;
     padding-bottom: 0px;
-  }
-
-  h3{
-    font-size: 18px;
-    color: #212529;
-  }
-  .left-side-container {
-    max-width: 500px;
-    min-width: 400px;
   }
   
   .link {
@@ -35,24 +25,18 @@
   .current-city {
     font-family: "Source Sans Pro", sans-serif;
     color: #212529;
-    text-align: left;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 32px;
   }
   .current-temperature {
     color: #212529;
-    text-align: center;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 700;
 
   }
-  .current-time-list {
-    padding: 10px 0px 0px;
-  }
   .current-time-item {
     display: inline-block;
-    margin: 15px 20px 0px;
-    color: #70757a;
+    margin: 30px 25px 0px;
   }
   .units {
     position: relative;
@@ -61,12 +45,17 @@
   }
 
   .current-weather {
-    min-width: 180px;
     padding: 20px 0px 0px;
-
   }
   .future-weather-container{
-    padding: 0px 0px 0px 10px;
+    padding: 0px 0px 0px 20px;
+  }
+  .feels-temperature::after{
+    content: "";
+    display: block;
+    width: 180px;
+    border-top: 1px solid #ced4da;
+
   }
   .feels-temperature-accent{
     font-size: 20px;
@@ -76,40 +65,26 @@
   }
   .city-form {
     padding: 20px 0px 0px 35px;
-    min-width: 415px;
-  }
-  .weather-emogi-container{
-    width: 200px;
-    text-align: center;
   }
   .weather-emoji{
     width: 150px;
   }
 
   .weather-descript {
-    font-size: 22px;
-    text-align: center;
-    color: #70757a;
-    margin: 0 auto;
-    padding: 15px 0px;
+    font-size: 20px;
+    padding: 10px 0px;
   }
   .weather-descript::first-letter{
     text-transform: capitalize;
   }
   
   .feels-temperature {
-    font-size: 18px;
-    text-align: center;
-    color: #70757a;
     margin: 0px;
   }
 .maximum-temp{
   font-weight: bolder;
 }
-.weather-forecst-day{
-  font-size: 18px;
-  width: 400px;
-}
+
 .forecast-temper{
   font-size: 14px;
   color: #212529;
@@ -119,31 +94,24 @@
     width: 200px;
     display: flex;
     justify-content: space-around;
-    padding: 10px 10px 0px;
+    padding: 40px 10px 0px;
     font-size: 14px;
-  }
-  .weather-item {
-    text-align: center;
   }
   .weather-item-accent{
     color: #212529; 
     opacity: 0.9;
   }
   .weather-forecast{
-    padding: 30px 0px 0px;
+    padding: 60px 0px 0px;
     text-align: center;
-   width: 350px;
+   width: 370px;
   }
 
   footer{
-    font-family: "Roboto", sans-serif;
-    max-width: 950px;
-    margin: 0 auto;
     text-align: center;
   }
   .footer-item {
     display: inline-block;
-    text-align: center;
     margin: 10px 20px 0px 0px;
     font-size: 12px;
   }
